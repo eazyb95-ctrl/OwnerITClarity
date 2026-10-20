@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner IT Clarity | B2B IT Health Audit & Systems Vault</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandNavy: '#0F172A',
+            brandBlue: '#2563EB',
+            brandBlueHover: '#1D4ED8',
+            brandSlate: '#1E293B',
+            brandCard: 'rgba(30, 41, 59, 0.7)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+
+  <style>
+    body {
+      background-color: #0B1120;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    /* Custom Range Slider Styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      background: #334155;
+      border-radius: 4px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #2563EB;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -7px;
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+      border: 2px solid #FFFFFF;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brandBlue selection:text-white">
+
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo Header -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="relative w-10 h-10 rounded-xl bg-brandBlue flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 overflow-hidden">
+            <!-- Tries to load logo.png, falls back to FontAwesome icon if image is missing -->
+            <img src="logo.png" alt="Owner IT Clarity Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('nav-fallback-icon').style.display='block';">
+            <i id="nav-fallback-icon" class="fa-solid fa-shield-halved hidden"></i>
+          </div>
+          <div>
+            <span class="text-xl font-bold tracking-tight text-white block">Owner IT <span class="text-blue-500">Clarity</span></span>
+            <span class="text-[10px] text-slate-400 block tracking-wider uppercase font-medium">Vero Beach, FL</span>
+          </div>
+        </a>
+
+
+        <!-- Nav Links -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#assessment" class="text-slate-300 hover:text-blue-400 transition-colors">IT Assessment</a>
+          <a href="#services" class="text-slate-300 hover:text-blue-400 transition-colors">Core Services</a>
+          <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors">Why Clarity</a>
+          <a href="#contact" class="text-slate-300 hover:text-blue-400 transition-colors">Contact Us</a>
+        </div>
+
+
+        <!-- Clean Header CTA Button -->
+        <div>
+          <a href="#assessment" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-brandBlue hover:bg-brandBlueHover transition-all shadow-lg shadow-blue-600/25">
+            <i class="fa-solid fa-chart-line mr-2"></i> Run Audit
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+    <!-- Background Accents -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+     
+      <!-- Location Badge -->
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs sm:text-sm font-medium mb-6">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Serving Small Businesses (3–15 Employees) in Vero Beach & Indian River County, FL</span>
+      </div>
+
+
+      <!-- Headline -->
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+        Eliminate Digital Chaos. <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">Take 100% Verified Control</span> of Your Business Tech.
+      </h1>
+
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+        Stop worrying about ex-employee ghost access, hidden recurring software bills, lost admin passwords, and unmapped laptops. We organize and lock down your systems vault so you can run your business with total confidence.
+      </p>
+
+
+      <!-- CTA Buttons -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#assessment" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-brandBlue hover:bg-brandBlueHover transition-all shadow-xl shadow-blue-600/30 flex items-center justify-center space-x-2">
+          <span>Take 2-Min IT Risk Assessment</span>
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+        <button onclick="openBookingModal('General Call')" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-200 glass-card hover:bg-slate-800 transition-all border border-slate-700 flex items-center justify-center space-x-2">
+          <i class="fa-regular fa-calendar-check text-blue-400"></i>
+          <span>Book Free 15-Min Audit Call</span>
+        </button>
+      </div>
+
+
+      <!-- Trust Indicators -->
+      <div class="mt-12 pt-8 border-t border-slate-800/80 max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-slate-400 text-xs sm:text-sm font-medium">
+        <div class="flex items-center justify-center space-x-2">
+          <i class="fa-solid fa-lock text-blue-400"></i>
+          <span>Credential Vaulting</span>
+        </div>
+        <div class="flex items-center justify-center space-x-2">
+          <i class="fa-solid fa-user-shield text-blue-400"></i>
+          <span>Offboarding Audits</span>
+        </div>
+        <div class="flex items-center justify-center space-x-2">
+          <i class="fa-solid fa-file-invoice-dollar text-blue-400"></i>
+          <span>SaaS Leak Cleanup</span>
+        </div>
+        <div class="flex items-center justify-center space-x-2">
+          <i class="fa-solid fa-laptop text-blue-400"></i>
+          <span>Hardware Mapping</span>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Interactive Audit Assessment Tool -->
+  <section id="assessment" class="py-16 bg-slate-900/60 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+     
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white tracking-tight">The Business IT Health Risk Scorecard</h2>
+        <p class="text-slate-400 mt-2">Adjust the risk slider for each question to calculate your business vulnerability score in real-time.</p>
+        <div class="inline-flex items-center space-x-4 text-xs text-slate-400 mt-4 bg-slate-800/80 px-4 py-2 rounded-lg border border-slate-700">
+          <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 mr-1.5"></span> 1 = Fully Protected</span>
+          <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 mr-1.5"></span> 3 = Moderate Risk</span>
+          <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-1.5"></span> 5 = Critical Danger</span>
+        </div>
+      </div>
+
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+       
+        <!-- Questions Container (Spans 2 columns) -->
+        <div class="lg:col-span-2 space-y-4" id="questions-container">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+
+        <!-- Live Score & Report Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-28 glass-card p-6 rounded-2xl border border-slate-700/80 shadow-2xl">
+            <h3 class="text-lg font-bold text-white mb-2 text-center">Your Live IT Health Score</h3>
+           
+            <!-- Gauge Canvas Visual -->
+            <div class="my-6 text-center">
+              <div class="relative inline-flex items-center justify-center">
+                <svg class="w-36 h-36 transform -rotate-90">
+                  <circle cx="72" cy="72" r="60" stroke="currentColor" stroke-width="10" class="text-slate-800" fill="transparent"/>
+                  <circle id="score-circle" cx="72" cy="72" r="60" stroke="currentColor" stroke-width="10" class="text-emerald-500 transition-all duration-500 ease-out" fill="transparent" stroke-dasharray="377" stroke-dashoffset="300" stroke-linecap="round"/>
+                </svg>
+                <div class="absolute flex flex-col items-center justify-center">
+                  <span id="score-number" class="text-4xl font-extrabold text-white">10</span>
+                  <span class="text-xs text-slate-400 uppercase tracking-widest mt-0.5">out of 50</span>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Risk Status Badge -->
+            <div id="status-badge-container" class="text-center mb-6">
+              <span id="status-badge" class="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                Secure / Well Managed
+              </span>
+            </div>
+
+
+            <!-- Summary Feedback -->
+            <div class="border-t border-slate-700/80 pt-4 mb-6">
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Audit Assessment</h4>
+              <p id="score-description" class="text-sm text-slate-300 leading-relaxed">
+                Your business appears well protected with minimal tech exposure.
+              </p>
+            </div>
+
+
+            <!-- Detected Vulnerabilities -->
+            <div id="high-risk-section" class="hidden border-t border-slate-700/80 pt-4 mb-6">
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-red-400 mb-2 flex items-center">
+                <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Detected Vulnerabilities
+              </h4>
+              <ul id="high-risk-list" class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                <!-- Dynamic risk items -->
+              </ul>
+            </div>
+
+
+            <!-- Action Button -->
+            <button onclick="openBookingModal('Scorecard Button')" class="w-full py-3 px-4 rounded-xl font-semibold text-white bg-brandBlue hover:bg-brandBlueHover transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 text-sm">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Get Free Diagnostic Plan</span>
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Core Services Showcase -->
+  <section id="services" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Our Core Service Offerings</h2>
+        <p class="mt-4 text-slate-400 text-lg">We don't force bloated monthly retainer contracts or sell hardware markups. We deliver targeted, fixed-scope clarity that secures your business operations.</p>
+      </div>
+
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+       
+        <!-- Card 1 -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-700/80 hover:border-blue-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">IT & SaaS Audits</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Identify ex-employees with lingering access to Slack, Dropbox, and Google Drive. Audit redundant software subscriptions and eliminate silent, recurring monthly bill leaks.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> Ghost account access sweep</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> License optimization & cost reduction</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> 15-Minute offboarding protocol</li>
+          </ul>
+        </div>
+
+
+        <!-- Card 2 -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-700/80 hover:border-blue-500/50 transition-all duration-300 group relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-lg tracking-wider">Most Popular</div>
+          <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-vault"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Systems Vault Consolidation</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Centralize all master admin logins, domain registrar settings, backup 2FA recovery codes, and cloud permissions into a single, encrypted, owner-controlled vault.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> Passes "The Bus Test" vulnerability</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> Verified domain & DNS ownership</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> Secure 2FA recovery backup keys</li>
+          </ul>
+        </div>
+
+
+        <!-- Card 3 -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-700/80 hover:border-blue-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Hardware & Asset Mapping</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Catalog every laptop, desktop, server, and active user in your company. Establish clean naming conventions and a physical equipment roster so nothing goes missing.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> Complete device hardware inventory</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> Standardized naming & mapping</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-400 mr-2"></i> Assigned user tracking roster</li>
+          </ul>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- About / Why Us Section -->
+  <section id="about" class="py-16 bg-slate-900/40 border-y border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card p-8 sm:p-12 rounded-3xl border border-slate-700/80 flex flex-col md:flex-row items-center gap-8">
+        <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white text-4xl sm:text-5xl shrink-0 shadow-xl shadow-blue-600/20 overflow-hidden">
+          <img src="logo.png" alt="Owner IT Clarity Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('about-fallback-icon').style.display='block';">
+          <i id="about-fallback-icon" class="fa-solid fa-user-check hidden"></i>
+        </div>
+        <div class="space-y-4 text-center md:text-left">
+          <h3 class="text-2xl font-bold text-white">Built Specifically for Local Small Business Owners</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Unlike traditional managed IT service providers (MSPs) who lock you into long, expensive retainer contracts, **Owner IT Clarity** focuses strictly on high-impact auditing, security vaulting, and practical organization.
+          </p>
+          <p class="text-slate-400 text-xs sm:text-sm">
+            Whether you run a local CPA firm, real estate brokerage, law practice, or service office in Vero Beach, we give you total ownership and clarity over your tech stack.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact & Formspree Form Section -->
+  <section id="contact" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Ready to Take Back Control of Your Tech?</h2>
+      <p class="mt-4 text-slate-300 text-lg max-w-2xl mx-auto">
+        Send us a message or request a quick 15-minute diagnostic call. We'll review your score and provide actionable next steps.
+      </p>
+
+
+      <div class="mt-10 glass-card p-8 rounded-3xl border border-slate-700/80 max-w-xl mx-auto text-left">
+        <!-- Embedded Formspree Form -->
+        <form action="https://formspree.io/f/mppqgpkq" method="POST" class="space-y-4">
+          <!-- Hidden input to pass dynamic audit score in email -->
+          <input type="hidden" name="Audit Score" class="audit-score-input" value="10 / 50 (Secure)">
+          <input type="hidden" name="Form Source" value="Direct Contact Form">
+
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+            <input type="text" name="Name" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Business Name</label>
+            <input type="text" name="Name" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Business Name</label>
+            <input type="text" name="Business Name" required placeholder="Vero Beach Realty Group" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+              <input type="email" name="Email" required placeholder="john@verorealty.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
+              <input type="tel" name="Phone" placeholder="(772) 555-0199" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">How can we help?</label>
+            <textarea name="Message" rows="3" placeholder="Tell us about your current IT setup or top concerns..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-semibold text-white bg-brandBlue hover:bg-brandBlueHover transition-all shadow-lg shadow-blue-600/30">
+            Send Message & Request Audit
+          </button>
+        </form>
+      </div>
+
+
+      <!-- Footer Info -->
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-envelope text-blue-400"></i>
+          <span>OwnerITClarity@gmail.com</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-location-dot text-blue-400"></i>
+          <span>Vero Beach, FL 32960</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="mt-auto py-8 border-t border-slate-800 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>&copy; <span id="year">2026</span> Owner IT Clarity. All rights reserved. Vero Beach, FL.</p>
+    </div>
+  </footer>
+
+
+  <!-- Lead Capture / Formspree Booking Modal -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+    <div class="glass-card w-full max-w-lg p-6 sm:p-8 rounded-3xl border border-slate-700 shadow-2xl relative">
+      <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl mx-auto mb-3">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white">Book Your Free 15-Min IT Audit Call</h3>
+        <p class="text-xs text-slate-400 mt-1">We'll review your score and provide a tailored security blueprint.</p>
+      </div>
+
+
+      <!-- Modal Formspree Endpoint -->
+      <form action="https://formspree.io/f/mppqgpkq" method="POST" class="space-y-4">
+        <!-- Hidden payload inputs -->
+        <input type="hidden" name="Audit Score" class="audit-score-input" value="10 / 50 (Secure)">
+        <input type="hidden" name="Form Source" value="Modal Lead Form">
+
+
+        <div id="modal-score-banner" class="p-3 bg-slate-800/80 rounded-xl border border-slate-700 text-xs text-slate-300 flex items-center justify-between">
+          <span>Current IT Health Score:</span>
+          <span id="modal-score-value" class="font-bold text-emerald-400">10 / 50</span>
+        </div>
+
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
+          <input type="text" name="Name" required placeholder="Jane Smith" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Business Name</label>
+          <input type="text" name="Business Name" required placeholder="Smith & Associates CPA" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Work Email</label>
+          <input type="email" name="Email" required placeholder="jane@smithcpa.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
+          <input type="tel" name="Phone" required placeholder="(772) 555-0123" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500">
+        </div>
+
+
+        <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-semibold text-white bg-brandBlue hover:bg-brandBlueHover transition-all shadow-lg shadow-blue-600/30">
+          Confirm Audit Request
+        </button>
+      </form>
+    </div>
+  </div>
+<!-- JavaScript App Logic -->
+  <script>
+    // 10 Core Audit Questions
+    const questions = [
+      {
+        id: 'q1',
+        title: '1. The Bus Test',
+        text: 'If your primary tech person was unavailable tomorrow, do you have master admin logins to your server/database?',
+        recommendation: 'Establish an encrypted master credential vault immediately.'
+      },
+      {
+        id: 'q2',
+        title: '2. Domain Ownership',
+        text: 'Is your website domain registered in YOUR name/email, not an old employee or agency?',
+        recommendation: 'Transfer domain registration into direct business owner ownership.'
+      },
+      {
+        id: 'q3',
+        title: '3. Ghost Users',
+        text: 'Do ex-employees still have active access to Slack, Email, Dropbox, or SaaS accounts?',
+        recommendation: 'Perform an immediate active user audit across all third-party software.'
+      },
+      {
+        id: 'q4',
+        title: '4. Redundant Spend',
+        text: 'Are you paying for multiple tools that do the same thing (e.g., Zoom AND Microsoft Teams)?',
+        recommendation: 'Consolidate communication software to eliminate redundant software billing.'
+      },
+      {
+        id: 'q5',
+        title: '5. Admin Privileges',
+        text: 'Does everyone have "Admin" access, or is permission restricted to only what staff need?',
+        recommendation: 'Implement role-based access control to limit privilege vulnerabilities.'
+      },
+      {
+        id: 'q6',
+        title: '6. 2FA Recovery',
+        text: 'If the primary 2FA phone is lost, do you have backup recovery codes stored in a safe physical place?',
+        recommendation: 'Generate and securely lock down secondary 2FA recovery backup keys.'
+      },
+      {
+        id: 'q7',
+        title: '7. Shadow IT',
+        text: 'Are employees using personal Google/Dropbox accounts for company business files?',
+        recommendation: 'Enforce official corporate cloud storage drives and block personal uploads.'
+      },
+      {
+        id: 'q8',
+        title: '8. Backup Integrity',
+        text: 'When was the last time you actually tried to RESTORE a file from your backup system?',
+        recommendation: 'Perform a live test restore to verify backup system integrity.'
+      },
+      {
+        id: 'q9',
+        title: '9. Hardware Assets & Mapping',
+        text: 'Do you know exactly how many laptops/desktops you own and who has them right now?',
+        recommendation: 'Create a master hardware inventory roster and assigned user mapping log.'
+      },
+      {
+        id: 'q10',
+        title: '10. Offboarding Checklist',
+        text: 'Is there a written 15-minute checklist followed immediately when an employee leaves?',
+        recommendation: 'Draft and enforce a standardized 15-minute offboarding checklist.'
+      }
+    ];
+
+
+    // State object for user answers (default 1 = fully protected)
+    const answers = {
+      q1: 1, q2: 1, q3: 1, q4: 1, q5: 1,
+      q6: 1, q7: 1, q8: 1, q9: 1, q10: 1
+    };
+
+
+    // Render Audit Questions
+    function renderQuestions() {
+      const container = document.getElementById('questions-container');
+      container.innerHTML = '';
+
+
+      questions.forEach((q) => {
+        const card = document.createElement('div');
+        card.className = 'glass-card p-5 rounded-2xl border border-slate-700/80 transition-all';
+        card.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
+            <div>
+              <h4 class="text-base font-bold text-white">${q.title}</h4>
+              <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">${q.text}</p>
+            </div>
+            <span id="label-${q.id}" class="self-start px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
+              1 - Low Risk
+            </span>
+          </div>
+
+
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center space-x-4">
+            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Protected (1)</span>
+            <input type="range" min="1" max="5" value="${answers[q.id]}" class="w-full" oninput="updateAnswer('${q.id}', this.value)">
+            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">High Risk (5)</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+
+    // Update Answer and Recalculate Score
+    function updateAnswer(id, val) {
+      const numericVal = parseInt(val, 10);
+      answers[id] = numericVal;
+
+
+      // Update question risk badge
+      const badge = document.getElementById(`label-${id}`);
+      if (numericVal === 1) {
+        badge.className = 'self-start px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap';
+        badge.innerText = '1 - Low Risk';
+      } else if (numericVal <= 3) {
+        badge.className = 'self-start px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 whitespace-nowrap';
+        badge.innerText = `${numericVal} - Moderate`;
+      } else {
+        badge.className = 'self-start px-2.5 py-1 rounded-md text-xs font-bold bg-red-500/20 text-red-400 border border-red-500/30 whitespace-nowrap';
+        badge.innerText = `${numericVal} - Critical Risk`;
+      }
+calculateScore();
+    }
+
+
+    // Calculate Dynamic Score & Update Interface
+    function calculateScore() {
+      let total = 0;
+      const highRiskItems = [];
+
+
+      Object.keys(answers).forEach((key) => {
+        const val = answers[key];
+        total += val;
+        if (val >= 4) {
+          const qObj = questions.find(q => q.id === key);
+          if (qObj) highRiskItems.push(qObj.recommendation);
+        }
+      });
+
+
+      // Update Score Display Number
+      const scoreNumEl = document.getElementById('score-number');
+      scoreNumEl.innerText = total;
+
+
+      // Gauge Circle Arc Calculation (StrokeDasharray = 377)
+      const scoreCircle = document.getElementById('score-circle');
+      const percent = (total - 10) / 40; // Scale 10 to 50
+      const offset = 377 - (percent * 377);
+      scoreCircle.style.strokeDashoffset = Math.max(0, offset);
+
+
+      // Status Badge, Colors, and Payload Formatting
+      const badge = document.getElementById('status-badge');
+      const desc = document.getElementById('score-description');
+      let statusText = 'Secure';
+
+
+      if (total <= 20) {
+        scoreCircle.style.color = '#10B981'; // Emerald
+        badge.className = 'inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+        badge.innerText = 'Secure / Well Managed';
+        desc.innerText = 'Your business tech appears well protected with low vulnerability exposure. Continue maintaining strict credential controls.';
+        statusText = 'Secure / Well Managed';
+      } else if (total <= 35) {
+        scoreCircle.style.color = '#F59E0B'; // Amber
+        badge.className = 'inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 border border-amber-500/30';
+        badge.innerText = 'Vulnerable / System Leakage';
+        desc.innerText = 'Moderate security risk detected. Unclear credential ownership or active ex-employee accounts pose potential leakage dangers.';
+        statusText = 'Vulnerable / System Leakage';
+      } else {
+        scoreCircle.style.color = '#EF4444'; // Red
+        badge.className = 'inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-red-500/20 text-red-400 border border-red-500/30';
+        badge.innerText = 'Critical Danger / High Risk';
+        desc.innerText = 'High operational exposure! Immediate risk of lost admin control, ghost user access, or unbacked data failure.';
+        statusText = 'Critical Danger / High Risk';
+      }
+
+
+      // Render Detected Vulnerabilities List
+      const highRiskSection = document.getElementById('high-risk-section');
+      const highRiskList = document.getElementById('high-risk-list');
+
+
+      if (highRiskItems.length > 0) {
+        highRiskSection.classList.remove('hidden');
+        highRiskList.innerHTML = highRiskItems.map(item => `<li>${item}</li>`).join('');
+      } else {
+        highRiskSection.classList.add('hidden');
+      }
+
+
+      // Update Formspree Hidden Input Fields with dynamic score data
+      const payloadString = `${total} / 50 (${statusText})`;
+      document.querySelectorAll('.audit-score-input').forEach(input => {
+        input.value = payloadString;
+      });
+
+
+      // Update Modal Preview
+      document.getElementById('modal-score-value').innerText = `${total} / 50`;
+    }
+
+
+    // Modal Visibility Controls
+    function openBookingModal(source) {
+      document.getElementById('booking-modal').classList.remove('hidden');
+    }
+
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.add('hidden');
+    }
+
+
+    // Initialize Page
+    window.onload = function() {
+      renderQuestions();
+      calculateScore();
+      document.getElementById('year').innerText = new Date().getFullYear();
+    };
+  </script>
+</body>
+</html>
